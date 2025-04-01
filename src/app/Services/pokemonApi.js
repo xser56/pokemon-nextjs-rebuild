@@ -2,7 +2,7 @@ const grabPokemonAPI = async (pokemonName) =>
 {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
     const data = await response.json();
-    // console.log(data);
+    console.log(data);
     return data;
 }
 
@@ -14,12 +14,11 @@ let grabPokemonLocationAPI = async (id) =>
 
     if (data.length === 0)
     {
-        pokeLoction.innerText = "This Pokemon cannot be caught in the wild!"
+        return "This Pokemon cannot be caught in the wild!"
     }
-    else
-    {
-        pokeLoction.innerText = data[0].location_area.name
-    }
+
+    return data[0].location_area.name.replace(/-/g, " ")
+    
 }
 
 let grabEvolutionChainAPI = async (pokemonName) => 
