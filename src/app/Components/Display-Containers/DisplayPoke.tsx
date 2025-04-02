@@ -81,7 +81,7 @@ const DisplayPoke: React.FC<DisplayPokeProps> = ({ searchPokemon, onAddFavorite 
 
   return (
     <div>
-      <div className="row-span-2 bg-[#a8c1ea7f] rounded-2xl border-1 min-h-[605px]">
+      <div className=" bg-[#a8c1ea7f] rounded-2xl border-1 min-h-[605px]">
         {/* Top Buttons */}
         <div className="flex justify-between">
           <div className="flex items-center">

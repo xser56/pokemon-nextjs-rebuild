@@ -42,7 +42,7 @@ export default function Home() {
   }, [favorites]);
 
   return (
-    <div className="min-h-screen bg-cover bg-center md:bg-top bg-no-repeat text-slate-900 text-2xl font-mono font-medium px-2" 
+    <div className=" bg-cover bg-center md:bg-top bg-no-repeat text-slate-900 text-2xl font-mono font-medium px-2" 
     style={{ backgroundImage: "url('/assets/pikachu.jpg')" }}
     >
       <header className="flex justify-center text-4xl sm:text-6xl md:justify-center font-mono font-light mb-4">
