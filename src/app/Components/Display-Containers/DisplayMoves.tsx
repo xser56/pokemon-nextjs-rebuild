@@ -11,9 +11,15 @@ const DisplayMoves = ({ searchPokemon }: SearchOnly) => {
   useEffect(() => {
     const fetchMoves = async () => {
         const data = await grabPokemonAPI(searchPokemon);
+
+        if (data.id > 649) {
+          setPokeMoves({ pokeMoves: [""] });
+          return;
+        }
+
+
         const moveNames = data.moves.map((moveObj: { move: { name: string } }) => moveObj.move.name);
         setPokeMoves({ pokeMoves: moveNames });
-      
     };
 
     fetchMoves();
@@ -26,11 +32,11 @@ const DisplayMoves = ({ searchPokemon }: SearchOnly) => {
   const column2 = allMoves.slice(half);
 
   return (
-    <div className="bg-[#a8c1ea7f] h-200 rounded-2xl border p-2 flex flex-col overflow-hidden">
-      <h1 className="flex justify-center text-3xl font-medium">Moves</h1>
+    <div className="bg-[#a8c1ea7f] rounded-2xl border p-2 flex flex-col overflow-hidden max-h-[615px] min-h-[615px]">
+      <h1 className="flex justify-center text-2xl font-medium">Moves</h1>
 
       {/* Scrollable move list */}
-      <div className="grid grid-cols-2 text-lg overflow-y-auto px-30 py-3 gap-4">
+      <div className="grid grid-cols-2 text-lg overflow-y-auto px-30 py-3 gap-4 ">
         <ul>
           {column1.map((move, i) => (
             <li key={i} className="capitalize">{move.replace('-', ' ')}</li>

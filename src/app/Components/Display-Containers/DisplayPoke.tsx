@@ -31,6 +31,19 @@ const DisplayPoke: React.FC<DisplayPokeProps> = ({ searchPokemon, onAddFavorite 
         const evoChainFiltered = apiEvo.filter(
           (name: string) => typeof name === "string" && name.toLowerCase() !== pokeName.toLowerCase()
         );
+
+        if (apiData.id > 649) {
+          setData({
+            pokeImage: "",
+            pokeShiny: "",
+            pokeName: "Please Search Pokemon Through Gen 1-5 (1-649) Only!",
+            pokeIndex: 0,
+            pokeEvo: [],
+            pokeType: [],
+          });
+          setEvolutions([]);
+          return;
+        }
         
         // Evolution
         const evoResults: EvoSprite[] = [];
@@ -68,7 +81,7 @@ const DisplayPoke: React.FC<DisplayPokeProps> = ({ searchPokemon, onAddFavorite 
 
   return (
     <div>
-      <div className="row-span-2 bg-[#a8c1ea7f] rounded-2xl border-1">
+      <div className="row-span-2 bg-[#a8c1ea7f] rounded-2xl border-1 min-h-[605px]">
         {/* Top Buttons */}
         <div className="flex justify-between">
           <div className="flex items-center">

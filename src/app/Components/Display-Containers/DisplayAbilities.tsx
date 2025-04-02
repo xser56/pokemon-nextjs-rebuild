@@ -9,11 +9,17 @@ const DisplayAbilities = ({ searchPokemon }: SearchOnly) => {
   useEffect(() => {
     const fetchAbilities = async () => {
       const data = await grabPokemonAPI(searchPokemon);
-  
+      
+      if(data.id > 649)
+      {
+        setAbilities([""])
+        return
+      }
+
       const abilityNames = data.abilities.map(
         (abilityObj: { ability: { name: string } }) => abilityObj.ability.name
       );
-  
+      
       setAbilities(abilityNames);
     };
   
@@ -22,7 +28,7 @@ const DisplayAbilities = ({ searchPokemon }: SearchOnly) => {
 
   return (
     <div className="bg-[#a8c1ea7f] rounded-2xl border p-4">
-  <h1 className="text-3xl font-semibold text-center mb-4">Abilities</h1>
+  <h1 className="text-2xl font-semibold text-center mb-4">Abilities</h1>
 
   <ul className="text-2xl flex justify-around gap-2 items-center">
     {abilities.length > 0 ? (
