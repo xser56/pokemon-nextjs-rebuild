@@ -16,6 +16,8 @@ const SearchBar = ({
       onSearch(searchValue.trim().toLowerCase());
       setSearchValue("");
     }
+
+
   };
 
   return (

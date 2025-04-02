@@ -1,7 +1,7 @@
 "use client";
 import { grabEvolutionChainAPI, grabPokemonAPI } from "@/app/Services/pokemonApi";
 import React, { useEffect, useState } from "react";
-import { PokeMain, EvoSprite, Search } from "@/app/Interfaces/pokeInterface";
+import { PokeMain, EvoSprite } from "@/app/Interfaces/pokeInterface";
 
 
 interface DisplayPokeProps {
@@ -55,7 +55,7 @@ const DisplayPoke: React.FC<DisplayPokeProps> = ({ searchPokemon, onAddFavorite 
           pokeName: apiData.name,
           pokeIndex: apiData.id,
           pokeEvo: evoChainFiltered,
-          pokeType: apiData.types.map((typeObj: any) => typeObj.type.name),
+          pokeType: apiData.types.map((typeObj: { type: { name: string } }) => typeObj.type.name),
         });
 
         setEvolutions(evoResults);    

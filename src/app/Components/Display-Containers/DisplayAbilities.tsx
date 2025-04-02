@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { grabPokemonAPI } from '@/app/Services/pokemonApi';
-import { Abilities, SearchOnly } from '@/app/Interfaces/pokeInterface';
+import { SearchOnly } from '@/app/Interfaces/pokeInterface';
 
 const DisplayAbilities = ({ searchPokemon }: SearchOnly) => {
   const [abilities, setAbilities] = useState<string[]>([]);
