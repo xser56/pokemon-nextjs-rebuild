@@ -7,6 +7,8 @@ import DisplayPoke from "./Components/Display-Containers/DisplayPoke";
 import DisplayMoves from "./Components/Display-Containers/DisplayMoves";
 import DisplayLocation from "./Components/Display-Containers/DisplayLocation";
 
+
+
 export default function Home() {
   const [searchPokemon, setSearchPokemon] = useState("");
   const [favorites, setFavorites] = useState<string[]>([]);
