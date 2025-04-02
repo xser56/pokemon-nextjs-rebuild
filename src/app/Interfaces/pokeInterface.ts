@@ -8,12 +8,6 @@ export interface PokeMain
     pokeShiny: string
 
 }
-// pokeFavorite:
-interface Favorite
-{
-    
-} 
-
 export interface Abilities
 {
     pokeAbilities: string[]
@@ -28,8 +22,21 @@ export interface Location
 {
     pokeLocation: string;
 }
-
-export interface Search
+export interface EvoSprite 
 {
-    searchPokemon: string
+    name: string;
+    image: string;
 }
+
+// Search Bar
+export interface Search {
+    searchPokemon: string;
+    onSearch: (name: string) => void;
+    favorites: string[];
+    onRemoveFavorite: (name: string) => void;
+    onRandom: () => void;
+  }
+export interface SearchOnly {
+    searchPokemon: string;
+  }
+

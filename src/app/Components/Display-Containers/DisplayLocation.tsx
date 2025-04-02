@@ -1,9 +1,9 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { grabPokemonLocationAPI } from '@/app/Services/pokemonApi';
-import { Location } from '@/app/Interfaces/pokeInterface';
+import { Location, SearchOnly } from '@/app/Interfaces/pokeInterface';
 
-const DisplayLocation = ({ searchPokemon }) => {
+const DisplayLocation = ({ searchPokemon }: SearchOnly) => {
   const [location, setLocation] = useState<Location>({
     pokeLocation: ""
   });

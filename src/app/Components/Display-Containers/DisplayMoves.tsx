@@ -1,9 +1,9 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import { grabPokemonAPI } from '@/app/Services/pokemonApi';
-import { Moves } from '@/app/Interfaces/pokeInterface';
+import { Moves, SearchOnly } from '@/app/Interfaces/pokeInterface';
 
-const DisplayMoves = ({ searchPokemon }) => {
+const DisplayMoves = ({ searchPokemon }: SearchOnly) => {
   const [pokeMoves, setPokeMoves] = useState<Moves>({
     pokeMoves: []
   });
