@@ -11,7 +11,7 @@ const DisplayMoves = ({ searchPokemon }: SearchOnly) => {
   useEffect(() => {
     const fetchMoves = async () => {
         const data = await grabPokemonAPI(searchPokemon);
-        const moveNames = data.moves.map((moveObj) => moveObj.move.name);
+        const moveNames = data.moves.map((moveObj: { move: { name: string } }) => moveObj.move.name);
         setPokeMoves({ pokeMoves: moveNames });
       
     };
